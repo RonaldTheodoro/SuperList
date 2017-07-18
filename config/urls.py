@@ -1,12 +1,12 @@
 from django.conf.urls import url
+from django.conf.urls import include
 from django.contrib import admin
-from apps.core import views
+from apps.core import views as core_views
+from apps.core import urls as core_urls
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='index'),
-    url(r'^lists/new$', views.new_list, name='new_list'),
-    url(r'^lists/(\d+)/$', views.view_list, name='view_list'),
-    url(r'^lists/(\d+)/add_item$', views.add_item, name='add_item'),
+    url(r'^$', core_views.index, name='index'),
+    url(r'^lists/', include(core_urls)),
 ]
