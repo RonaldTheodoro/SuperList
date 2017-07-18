@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
     url(r'^lists/new$', views.new_list, name='new_list'),
-    url(r'^lists/user-list/$', views.view_list, name='view_list'),
+    url(r'^lists/(\d+)/$', views.view_list, name='view_list'),
+    url(r'^lists/(\d+)/add_item$', views.add_item, name='add_item'),
 ]
