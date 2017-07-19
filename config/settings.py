@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'apps.core',
     # Third apps
     'test_without_migrations',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
