@@ -104,3 +104,6 @@ ENV/
 
 # Visual Studio Code config
 .vscode
+
+# Staticfiles
+staticfiles
