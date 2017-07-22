@@ -3,6 +3,7 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import WebDriverException
+from decouple import config
 
 
 MAX_WAIT = 10
@@ -12,6 +13,9 @@ class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
+        staging_server = config('STAGING_SERVER')
+        if staging_server:
+            self.live_server_url = 'http://' + staging_server
 
     def tearDown(self):
         self.browser.quit()
