@@ -13,7 +13,7 @@ class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
-        staging_server = config('STAGING_SERVER')
+        staging_server = config('STAGING_SERVER', default=None)
         if staging_server:
             self.live_server_url = 'http://' + staging_server
 
